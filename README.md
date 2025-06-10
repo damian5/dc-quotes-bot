@@ -1,8 +1,10 @@
-<div style="display: flex; flex-direction:row;align-items: center">
-<a href="https://emoji.gg/emoji/9738-discord-ico">
-  <img src="https://cdn3.emoji.gg/emojis/9738-discord-ico.png" alt="discord_ico" height="40"/>
-</a><p style="margin:0 5px; border-bottom: 0" >Discord Quotes Bot</p>
-</div>
+
+
+<p align="center">
+  <img src="https://cdn3.emoji.gg/emojis/9738-discord-ico.png" height="70" />
+</p>
+<h2 align="center">Discord Quotes Bot</h2>
+
 
 A simple and extensible Discord bot built with TypeScript that allows users to manage and retrieve quotes via slash commands. Supports commands to add, list, get, and delete quotes, plus a latency checker.
 
