@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.0",
+    "chalk": "^5.4.1",
+    "discord.js": "^14.19.3",
+    "dotenv": "^16.5.0",
+    "uuid": "^11.1.0"
+  },
+  "name": "quotes-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "@types/ws": "^8.18.1",
+    "@typescript-eslint/eslint-plugin": "^8.34.0",
+    "@typescript-eslint/parser": "^8.34.0",
+    "eslint": "^9.28.0",
+    "globals": "^16.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.0"
+  }
+}
