@@ -24,18 +24,15 @@ export const deleteQuote = async (interaction: ChatInputCommandInteraction) => {
   }
 
   try {
-    const data = await deleteQuoteById(quoteIdToDelete);
-    console.log("res", data);
+    await deleteQuoteById(quoteIdToDelete);
   } catch (error) {
     console.error("Error deleting a quote", error);
+    interaction.user.id;
     reply(
       interaction,
       "There was an error deleting the quote, try again later."
     );
   }
 
-  reply(
-    interaction,
-    `The quote with ID ${quoteIdToDelete} has been successfully deleted`
-  );
+  reply(interaction, `A quote has been successfully deleted`);
 };

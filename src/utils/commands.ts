@@ -6,7 +6,8 @@ import {
 
 export const ping = new SlashCommandBuilder()
   .setName("ping")
-  .setDescription("Pings the bot and shows the latency");
+  .setDescription("Pings the bot and shows the latency")
+  .setDefaultMemberPermissions(PermissionFlagsBits.Administrator);
 
 export const quote = new SlashCommandBuilder()
   .setName("quote")

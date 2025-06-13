@@ -1,8 +1,6 @@
 import { execSync } from "child_process";
 import { createInterface } from "node:readline";
-import { commands } from "../utils/commands";
 import { client } from "./client";
-import { Routes, type User } from "discord.js";
 import { registerCommands } from "./registerCommands";
 
 const rl = createInterface({ input: process.stdin, output: process.stdout });

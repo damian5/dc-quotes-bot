@@ -3,8 +3,8 @@ import type { Quote } from "../types";
 import { reply } from "../utils/reply";
 import { isAdmin } from "../utils/isAdmin";
 import { fetchAllQuotes } from "../service/quotes";
+import { sendChunks } from "../service/replyWithChunks";
 
-const EXTRA_SPACE = 2;
 const MAX_QUOTE_LENGTH = 45;
 
 const createTable = (quotes: Quote[]) => {
@@ -19,24 +19,15 @@ const createTable = (quotes: Quote[]) => {
     quoteHeaderLength = MAX_QUOTE_LENGTH;
   }
 
-  const quoteHeader = new Array(quoteHeaderLength + EXTRA_SPACE)
-    .fill("-")
-    .join("");
-
-  let table =
-    "```" +
-    "ID                                   | Quote\n" +
-    `-------------------------------------|${quoteHeader}\n`;
+  let table = "";
 
   for (const singleQuote of quotes) {
     const shortened =
       singleQuote.text.length > MAX_QUOTE_LENGTH
         ? singleQuote.text.slice(0, MAX_QUOTE_LENGTH - 3) + "..."
         : singleQuote.text;
-    table += `${singleQuote.id} | ${shortened}\n`;
+    table += `${singleQuote.id} ---> ${shortened}\n`;
   }
-
-  table += "```";
 
   return table;
 };
@@ -58,6 +49,5 @@ export const getAllQuotes = async (
   }
 
   const table = createTable(quotes);
-
-  reply(interaction, table);
+  sendChunks(interaction, table);
 };

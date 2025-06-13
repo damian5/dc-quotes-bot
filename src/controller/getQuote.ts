@@ -6,6 +6,8 @@ import { reply } from "../utils/reply";
 let lastQuote: string | null = null;
 
 export const getQuote = async (interaction: ChatInputCommandInteraction) => {
+  console.log("Channel id", interaction.channelId);
+
   try {
     const quotes: Quote[] = await fetchAllQuotes();
     if (!quotes.length) {

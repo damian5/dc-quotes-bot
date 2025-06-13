@@ -11,12 +11,9 @@ export const addQuote = async (interaction: ChatInputCommandInteraction) => {
   const quoteToAdd = interaction.options.get("quote", true).value as string;
 
   try {
-    const data = await addQuoteService(quoteToAdd);
+    await addQuoteService(quoteToAdd);
     if (interaction.isRepliable()) {
-      reply(
-        interaction,
-        `You have added the following quote: ${quoteToAdd} with id ${data.id}`
-      );
+      reply(interaction, `The following quote has been added: "${quoteToAdd}"`);
     }
   } catch (error) {
     console.error("Error adding a quote", error);
